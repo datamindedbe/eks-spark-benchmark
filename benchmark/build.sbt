@@ -2,7 +2,9 @@ name := "eks-spark-benchmark"
 
 version := "1.0"
 
-scalaVersion := "2.11.12"
+scalaVersion := "2.12.10"
+
+val sparkVersion = "3.1.2"
 
 javacOptions ++= Seq("-source", "1.8", "-target", "1.8")
 
@@ -10,8 +12,8 @@ unmanagedBase <<= baseDirectory { base => base / "libs" }
 
 // Dependencies required for this project
 libraryDependencies ++= Seq(
-  "org.apache.spark" %% "spark-core" % "2.4.5" % "provided",
-  "org.apache.spark" %% "spark-sql" % "2.4.5" % "provided",
+  "org.apache.spark" %% "spark-core" % sparkVersion % "provided",
+  "org.apache.spark" %% "spark-sql" % sparkVersion % "provided",
   // JSON serialization
   "org.json4s" %% "json4s-native" % "3.6.7",
   // scala logging
