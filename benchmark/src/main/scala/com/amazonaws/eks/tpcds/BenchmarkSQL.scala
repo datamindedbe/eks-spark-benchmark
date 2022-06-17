@@ -26,7 +26,6 @@ object BenchmarkSQL {
 
     val spark = SparkSession
       .builder
-      .appName(s"TPCDS SQL Benchmark $scaleFactor GB")
       .getOrCreate()
 
     if (onlyWarn) {
